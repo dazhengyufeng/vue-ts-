@@ -103,7 +103,7 @@ export default class Articles extends Vue {
   };
   private href: string =
     process.env.NODE_ENV === "development"
-      ? "http://localhost:3001/articleDetail?article_id="
+      ? "http://localhost:3002/articleDetail?article_id="
       : "https://biaochenxuying.cn/articleDetail?article_id=";
 
   // lifecycle hook
@@ -132,14 +132,14 @@ export default class Articles extends Vue {
 
   // method
   private articleDetail(id: string): void {
-    // console.log("`id`", `/articleDetail?article_id=${id}`);
-    // let url: string = "";
-    // if (process.env.NODE_ENV === "development") {
-    //   url = "http://localhost:3001/articleDetail?";
-    // } else {
-    //   url = "https://biaochenxuying.cn/articleDetail?";
-    // }
-    // window.open(url + `article_id=${id}`);
+    console.log("`id`", `/articleDetail?article_id=${id}`);
+    let url: string = "";
+    if (process.env.NODE_ENV === "development") {
+      url = "http://localhost:3002/articleDetail?";
+    } else {
+      url = "https://biaochenxuying.cn/articleDetail?";
+    }
+    window.open(url + `article_id=${id}`);
   }
   
   private async handleSearch(): Promise<void> {

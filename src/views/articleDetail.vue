@@ -265,6 +265,7 @@ export default class ArticleDetail extends Vue {
     this.isLoading = false;
 
     this.articleDetail = data;
+    console.log(this.articleDetail, '文章详情')
     const article = markdown.marked(data.content);
     article.then((res: any) => {
       this.articleDetail.content = res.content;
