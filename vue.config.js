@@ -58,11 +58,11 @@ module.exports = {
   // PWA 插件相关配置
   // see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
   pwa: {},
-  // webpack-dev-server 相关配置
+  // webpack-dev-server 相关配置   //  设置nginx反向代理  *******
   devServer: {
     open: process.platform === "darwin",
     host: "localhost",
-    port: 3002, //8080,
+    port: 8080, //8080,
     https: false,
     hotOnly: false,
     proxy: {
