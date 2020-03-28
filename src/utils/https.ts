@@ -15,6 +15,7 @@ if (process.env.NODE_ENV === "development") {
     timeout: 50000 // 请求超时时间
   });
 } else {
+  console.log('生产环境')
   // 生产环境下
   service = axios.create({
     baseURL: "http://47.93.182.94:3000",
