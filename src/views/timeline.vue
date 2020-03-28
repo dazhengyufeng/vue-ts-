@@ -42,6 +42,7 @@ import { Params, TimelineList, TimelinesData } from "@/types/index";
     LoadingCustom
   }
 })
+// 
 export default class Timeline extends Vue {
   private isLoadEnd: boolean = false;
   private isLoading: boolean = false;
