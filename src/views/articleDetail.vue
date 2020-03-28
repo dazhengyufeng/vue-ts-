@@ -222,10 +222,10 @@ export default class ArticleDetail extends Vue {
   }
 
   beforeDestroy(): void {
-    document.title = "夜尽天明的博客网站";
+    document.title = "大正与疯的博客网站";
     document
       .getElementById("keywords")
-      .setAttribute("content", "夜尽天明 的博客网站");
+      .setAttribute("content", "大正与疯 的博客网站");
     document
       .getElementById("description")
       .setAttribute(
@@ -243,10 +243,10 @@ export default class ArticleDetail extends Vue {
 
   // beforeRouteLeave (to, from, next) {
   //   console.log('beforeRouteLeave')
-  //   document.title = "夜尽天明的博客网站";
+  //   document.title = "大正与疯的博客网站";
   //   document
   //     .getElementById("keywords")
-  //     .setAttribute("content", "夜尽天明 的博客网站");
+  //     .setAttribute("content", "大正与疯 的博客网站");
   //   document
   //     .getElementById("description")
   //     .setAttribute(
