@@ -48,7 +48,7 @@ const check = (
   callback: Function | any
 ): any => {
   if (!value) {
-    return callback(new Error("邮箱不能为空"));
+    return callback(new Error("邮箱不能为空   "));
   }
 };
 const checkPhone = (

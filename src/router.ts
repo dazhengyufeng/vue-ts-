@@ -39,7 +39,7 @@ export default new Router({
         import(/* webpackChunkName: "timeline" */ "./views/timeline.vue")
     },
     {
-      path: "/project",
+      path: "/project",  // 项目
       name: "project",
       component: () =>
         import(/* webpackChunkName: "project" */ "./views/project.vue")
