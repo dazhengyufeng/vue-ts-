@@ -104,7 +104,7 @@ export default class Articles extends Vue {
   private href: string =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3002/articleDetail?article_id="
-      : "https://biaochenxuying.cn/articleDetail?article_id=";
+      : "http://47.93.182.94:8080/#/articleDetail?article_id=";
 
   // lifecycle hook
   mounted(): void {
@@ -137,7 +137,8 @@ export default class Articles extends Vue {
     if (process.env.NODE_ENV === "development") {
       url = "http://localhost:3002/articleDetail?";
     } else {
-      url = "https://biaochenxuying.cn/articleDetail?";
+      url = "http://47.93.182.94:8080/#/articleDetail?";
+      // 
     }
     window.open(url + `article_id=${id}`);
   }
