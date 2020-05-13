@@ -9,7 +9,7 @@
           <div class="author">
             <div class="avatar">
               <img class="auth-logo"
-                   src="../assets/userLogo.jpeg"
+                   src="../assets/baoqiang.jpg"
                    alt="BiaoChenXuYing">
             </div>
             <div class="info">
@@ -110,6 +110,7 @@ declare let document: Document | any;
     CommentList
   }
 })
+
 export default class ArticleDetail extends Vue {
   private btnLoading: boolean = false;
   private isLoadEnd: boolean = false;
@@ -146,8 +147,9 @@ export default class ArticleDetail extends Vue {
   private likeTimes: number = 0; // 点赞次数
 
   mounted(): void {
-    this.params.id = this.$route.query.article_id;
-    // this.params.id = "5c8cfe5d26bb39b22d3a7aec";
+    console.log(this.params.id,'进入详情页')
+    this.params.id = this.$route.query.id;
+    // // this.params.id = "5c8cfe5d26bb39b22d3a7aec";
     if (this.$route.path === "/about") {
       this.params.type = 3;
     }

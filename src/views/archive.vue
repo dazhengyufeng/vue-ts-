@@ -13,10 +13,10 @@
                           :color="item.state === 1 ? 'green' : item.state === 3 ? 'red' : ''"
                           placement="top"
                           hide-timestamp>
-          <router-link :to="`/articleDetail?article_id=${item._id}`"
-                       target="_blank">
-            <h3 class="title">{{item.title}}</h3>
-          </router-link>
+          <!-- <router-link :to="`/articleDetail?article_id=${item._id}`"
+                       target="_blank"> -->
+            <!-- <h3 class="title">{{item.title}}</h3>
+          </router-link> -->
           <p>{{formatTime(item.create_time)}}</p>
         </el-timeline-item>
       </el-timeline-item>

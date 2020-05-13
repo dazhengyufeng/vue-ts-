@@ -9,8 +9,6 @@
             v-for="(article) in articlesList"
             :key="article._id"
             class="item">
-          <a :href="href + article._id"
-             target="_blank">
             <img class="wrap-img img-blur-done"
                  :data-src="article.img_url"
                  data-has-lazy-src="false"
@@ -29,7 +27,6 @@
                 </span>
               </div>
             </div>
-          </a>
         </li>
       </transition-group>
     </ul>
@@ -104,7 +101,7 @@ export default class Articles extends Vue {
   private href: string =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3002/articleDetail?article_id="
-      : "http://47.93.182.94:8080/#/articleDetail?article_id=";
+      : "http://192.168.10.126/:8080/#/articleDetail?article_id=";
 
   // lifecycle hook
   mounted(): void {
@@ -132,15 +129,34 @@ export default class Articles extends Vue {
 
   // method
   private articleDetail(id: string): void {
-    console.log("`id`", `/articleDetail?article_id=${id}`);
-    let url: string = "";
-    if (process.env.NODE_ENV === "development") {
-      url = "http://localhost:3002/articleDetail?";
-    } else {
-      url = "http://47.93.182.94:8080/#/articleDetail?";
-      // 
-    }
-    window.open(url + `article_id=${id}`);
+    // console.log("`id`", `/articleDetail?article_id=${id}`);
+    // let url: string = "";
+    // if (process.env.NODE_ENV === "development") {
+    //   url = "http://localhost:3002/articleDetail?";
+    // } else {
+    //   // url = "http://47.93.182.94:8080/#/articleDetail?";
+    //   var { href } = this.$router.resolve({
+    //     path: `article_id=${id}`
+    //   })
+    //   // 
+    // }
+    // 跳转路由
+    this.$router.push({
+        path: `/articleDetail`,
+        query:{id:id}
+    })
+
+    // var { href } = this.$router.resolve({
+    //     path: `/articleDetail/${id}`
+    // })
+    // // 路由跳转进入详情
+    // window.open(href, '_blank')
+    // window.open(url + `article_id=${id}`);
+
+    // const { href } = this.$router.resolve({
+    //     path: `article_id=${id}`
+    // })
+    
   }
   
   private async handleSearch(): Promise<void> {
